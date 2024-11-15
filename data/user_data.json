@@ -1,0 +1,15 @@
+
+{
+  "name": "Kate",
+  "password": "katekate",
+  "email": "kate@gmail.com",
+  "gender": "female",
+  "first_name": "Kate",
+  "last_name": "Smit",
+  "address1": "Dana street",
+  "country": "United States",
+  "state": "California",
+  "city": "San Francisco",
+  "zipcode": "222222",
+  "mobile_number": "22222222"
+}
