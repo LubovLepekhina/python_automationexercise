@@ -1,6 +1,9 @@
 
 class WelcomePageLocators:
      signup_login_btn = ('xpath', "//a[@href='/login']")
+     logged_in_as_btn = ('xpath', "//a[text()=' Logged in as ']")
+     delete_account_btn = ('xpath', "//a[@href='/delete_account']")
+
 
 class SignupLoginLocators:
      name_signup_input = ('xpath', "//input[@data-qa='signup-name']")
@@ -28,3 +31,9 @@ class AccountInformationLocators:
      mobile_number_input = ('xpath', "//input[@id='mobile_number']")
 
      create_account_btn = ('xpath', "//button[@data-qa='create-account']")
+
+     continue_btn = ('xpath', "//a[text()='Continue']")
+
+class DeleteAccountLocators:
+     header_delete_acc = ('xpath', "//h2[text()='Account Deleted!']")
+     continue_btn = ('xpath', "//a[text()='Continue']")

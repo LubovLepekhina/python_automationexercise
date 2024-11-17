@@ -1,3 +1,5 @@
+import json
+
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
@@ -16,21 +18,16 @@ class BasePage:
     def click_element(self, locator):
         self.find_element(locator).click()
 
-    def type(self, locator,text):
-        self.find_element(locator).send_keys(text)
-
     def select_option(self, locator, item):
-        # Найти элемент выпадающего списка
-        dropdown = self.find_element(locator)  # Замените на реальный ID
-
-        # Работа с выпадающим списком через класс Select
+        dropdown = self.find_element(locator)
         select = Select(dropdown)
-
-        # Выбрать элемент по видимому тексту
         select.select_by_visible_text(item)
 
-        # Выбрать элемент по значению атрибута value
-        # select.select_by_value("option_value")
-        #
-        # # Выбрать элемент по индексу
-        # select.select_by_index(2)
+    @staticmethod
+    def get_data_from_json(self, path):
+        with open(path, 'r') as data_user:
+            return json.load(data_user)
+
+    def find_style_of_element(self, locator, style):
+        element = self.find_element(locator)
+        return element.value_of_css_property(style)

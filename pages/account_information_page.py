@@ -8,8 +8,7 @@ class AccountInformationPage(BasePage):
     locators = AccountInformationLocators()
 
     def fill_all_fields(self):
-        with open('../data/user_data.json', 'r') as data_user:
-            data = json.load(data_user)
+        data = self.get_data_from_json(self,'../data/user_data.json')
         if data['gender'] == 'female':
             self.find_element(self.locators.radio_btn_mrs).click()
         else:
@@ -28,6 +27,9 @@ class AccountInformationPage(BasePage):
         element = self.find_element(self.locators.create_account_btn)
         self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
         self.click_element(self.locators.create_account_btn)
+
+        self.click_element(self.locators.continue_btn)
+
 
 
 
